@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Exodus Adventure Travels</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            margin-right: 1rem;
+            height: 50px;
+            width: auto;
+        }
+
+        header .icons {
+            display: flex;
+            align-items: center;
+        }
+
+        header .icons a {
+            text-decoration: none;
+            color: #666666;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px; 
+            height: 30px;
+            border: 2px solid #dcdcdc;
+            border-radius: 50%;
+        }
+
+      
+        header .icons a .fa-search {
+            transform: rotate(85deg); 
+        }
+
+  
+        header .icons a .fa-phone-alt {
+            transform: scaleX(-1);
+            color: #00a9b7;
+         
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon i {
+            font-size: 1.2rem;
+        }
+
+        .hero {
+            position: relative;
+            background: url('bg.jpg') center/cover;
+            height: 300px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            ;
+        }
+
+        .hero .text-container {
+            position: relative;
+            backdrop-filter: blur(10px);
+           
+            background: rgb(0 0 0 / 68%);
+           
+            padding: 20px;
+            margin: 10px;
+            
+            border-radius: 10px;
+          
+        }
+
+        .hero h1,
+        .hero p {
+            margin: 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+           
+            font-family: Arial, sans-serif;
+        }
+
+        .read-more-content {
+            max-height: 3.6em;
+            overflow: hidden;
+        }
+
+        .read-more-trigger {
+            cursor: pointer;
+            color: #00a9b7;
+            color: #00a9b7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .arrow-down,
+        .arrow-up {
+            margin-left: 5px;
+            display: inline;
+        }
+
+        .tours {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+            text-align: justify;
+            color: #333333;
+        }
+
+        .tours h2 {
+            font-size: 2rem;
+            
+            margin-bottom: 1rem;
+            color: #333333;
+            letter-spacing: -1px;
+        }
+
+        .tours p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-family: Arial, sans-serif;
+           
+        }
+
+        .read-more-tours {
+            max-height: 8.5em;
+            overflow: hidden;
+            
+        }
+
+        .read-more-trigger-tours {
+            cursor: pointer;
+            color: #00a9b7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .arrow-down-tours,
+        .arrow-up-tours {
+            margin-left: 5px;
+            display: inline;
+            font-weight: bold;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .phone-container {
+            background-color: #ffffff;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin:  10px;
+            border-radius: 5px;
+        }
+
+        .phone-container h3 {
+            font-size: 1.125rem; 
+            margin-bottom: 0.5rem;
+            font: caption;
+         
+        }
+
+        .phone-container p {
+            font-weight: bold;
+            color: #00a9b7;
+            margin: 0;
+          
+
+        }
+
+        .custom-container {
+            background-color: #ffffff;
+            margin-top: 1rem;
+            padding: 1rem;
+            margin:  10px;
+            text-align: center;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-container h3 {
+            font-size: 1.145rem; 
+        }
+
+        .custom-container p {
+            color: #00a9b7; 
+        }
+
+        .custom-container-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .custom-container-input {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-container-input i {
+            margin-right: 0.5rem; 
+            color: #cbd5e0; 
+        }
+
+        .custom-container span{
+            display: table;
+    margin: 0 auto;
+        }
+        .custom-container-input input {
+            width: 100%;
+            font-size: 0.875rem; 
+            color: #a0aec0; 
+            border: none;
+            outline: none;
+            background: none;
+
+
+        }
+        .custom-container-input img{
+            border-radius: 50%;
+        }
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+
+            header img {
+                order: 2;
+                margin-left: 1rem;
+                margin-right: 0;
+            }
+
+            header .icons {
+                order: 1;
+            }
+
+            .menu-icon {
+    display: block;
+    width: 35px;
+    height: 30px;
+    padding-top:5px; 
+    background-color: #333; 
+    border: 2px solid #fff; 
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+  
+    color: whitesmoke;
+}
+
+
+
+.menu-icon::before {
+    top: -8px;
+
+.menu-icon::after {
+    top: 8px; 
+}
+            .icons {
+                display: flex;
+            }
+
+            .icons a {
+                margin-right: 10px;
+            }
+
+            .hero {
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .tours {
+                padding: 1rem;
+            }
+            .phone-container{
+                text-align: left;
+            }
+            .custom-container {
+                margin:  10px;
+            }
+            .custom-container span{
+            display: block;
+            margin: 0;
+        }
+        }}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <img alt="Exodus Adventure Travels logo" src="logo.png" />
+        <div class="icons">
+            <a href="#">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="#">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="text-container">
+            <h1>Armenia Tours</h1>
+            <div>
+                <p>Where Asia and Europe meet in a symphony of mountains, history, and tradition</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="tours">
+        <h2>Armenia Tours</h2>
+        <div class="read-more-tours">
+            <p>
+                Adventure awaits, right on your doorstep! With so many cultures and countries just a short flight away,
+                our unique Europe tours offer far more than you could imagine. From glorious summers spent relaxing on
+                beaches or exploring historic towns, to snowy winters spent on the slopes or sipping hot chocolate by
+                the fire, our adventure holidays in Europe are designed to keep you entertained and captivated, season
+                by season. Stretching from the countries of the former USSR to the Atlantic islands of Iceland and
+                Greenland, Europe is one of the planet’s most beautifully diverse regions on the planet. Explore a new
+                culture, delve into ancient ruins, or make new friends on an action-packed adventure: our trips to
+                Europe let you see and experience it all. Start building your dream trip, with our expert local guides,
+                and choose by destination or type of activity. Whether you want to travel to Italy, Spain, Croatia,
+                Portugal or Greece, each country or region has its own unique offering, and is sure to be an incredible
+                adventure.
+            </p>
+        </div>
+        <div class="read-more-trigger-tours" onclick="toggleReadMoreTours()">Read more <span
+                class="arrow-down-tours">&#8595;</span></div>
+    </div>
+    <div class= "phone-container">
+        <h3>
+            Call for general departures:
+        </h3>
+        <p>
+            02039932193
+        </p>
+    </div>
+    <div class="custom-container custom-container-flex" >
+        <span class="text-lg" style=" color: #00a9b7;">
+            Email Enquiry
+        </span>
+        <i class="fas fa-chevron-right text-blue-600"></i>
+    </div>
+
+    </div>
+    </div>
+    <script>
+
+
+        function toggleReadMoreTours() {
+            var content = document.querySelector('.read-more-tours');
+            var trigger = document.querySelector('.read-more-trigger-tours');
+            var arrow = document.querySelector('.arrow-down-tours');
+
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                trigger.innerHTML = 'Read more <span class="arrow-down-tours">&#8595;</span>';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                trigger.innerHTML = 'Read less <span class="arrow-up-tours">&#8593;</span>';
+            }
+        }
+    </script>
+</body>
+
+</html>
